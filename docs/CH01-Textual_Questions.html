@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,14 +13,13 @@
         --primary: #2563eb;
         --primary-dark: #1e40af;
         --secondary: #f59e0b;
-        --dark: #1e293b;
         --light: #f8fafc;
         --gray: #94a3b8;
         --success: #10b981;
         --warning: #f59e0b;
         --danger: #ef4444;
-        
-        /* Light theme variables - ALL TEXT DARK */
+
+        /* Light theme colors */
         --bg-primary: #f1f5f9;
         --bg-secondary: #ffffff;
         --text-primary: #1e293b;
@@ -44,81 +44,6 @@
         --heading-color: #1e293b;
         --link-color: #2563eb;
         --link-hover: #1d4ed8;
-      }
-
-      /* Dark theme */
-      [data-theme="dark"] {
-        --bg-primary: #0f172a;
-        --bg-secondary: #1e293b;
-        --text-primary: #f8fafc;
-        --text-secondary: #cbd5e1;
-        --text-muted: #94a3b8;
-        --border-color: #334155;
-        --shadow: rgba(0, 0, 0, 0.3);
-        --card-bg: #1e293b;
-        --sidebar-bg: #1e293b;
-        --algorithm-bg: #0f172a;
-        --algorithm-text: #ffffff;
-        --flowchart-bg: #1e293b;
-        --flowchart-text: #f8fafc;
-        --flowchart-border: #64748b;
-        --alert-bg: #1e3a8a;
-        --hint-bg: #451a03;
-        --hint-border: #92400e;
-        --hint-text: #fbbf24;
-        --short-answer-bg: #064e3b;
-        --warning-bg: #451a03;
-        --code-text: #f8fafc;
-        --heading-color: #f8fafc;
-        --link-color: #60a5fa;
-        --link-hover: #93c5fd;
-      }
-
-      /* Theme switcher styles */
-      .theme-switcher {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-        display: flex;
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 25px;
-        padding: 4px;
-        box-shadow: 0 4px 6px var(--shadow);
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s ease;
-      }
-
-      .theme-toggle {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px 12px;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 14px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        color: var(--text-secondary);
-      }
-
-      .theme-toggle:hover {
-        background: var(--bg-primary);
-        color: var(--text-primary);
-      }
-
-      .theme-toggle.active {
-        background: var(--primary);
-        color: white;
-      }
-
-      .theme-toggle i {
-        font-size: 16px;
-      }
         --code-bg: #1e293b;
         --sidebar-width: 280px;
       }
@@ -141,8 +66,8 @@
           Cantarell,
           sans-serif;
         line-height: 1.6;
-        background-color: #f1f5f9;
-        color: var(--dark);
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
         display: flex;
         min-height: 100vh;
       }
@@ -150,7 +75,7 @@
       /* Sidebar */
       .sidebar {
         width: var(--sidebar-width);
-        background: white;
+        background: var(--sidebar-bg);
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         padding: 1.5rem;
         position: fixed;
@@ -165,7 +90,7 @@
         align-items: center;
         margin-bottom: 2rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid #e2e8f0;
+        border-bottom: 1px solid var(--border-color);
       }
 
       .sidebar-header h2 {
@@ -188,14 +113,14 @@
         gap: 0.75rem;
         padding: 0.75rem 1rem;
         border-radius: 0.5rem;
-        color: var(--dark);
+        color: var(--text-primary);
         text-decoration: none;
         transition: all 0.2s ease;
       }
 
       .sidebar-nav a:hover,
       .sidebar-nav a.active {
-        background-color: #f1f5f9;
+        background-color: var(--bg-primary);
         color: var(--primary);
       }
 
@@ -218,7 +143,7 @@
         align-items: center;
         margin-bottom: 2rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid #e2e8f0;
+        border-bottom: 1px solid var(--border-color);
       }
 
       .header h1 {
@@ -254,12 +179,12 @@
       .btn-outline {
         background-color: transparent;
         border: 1px solid var(--gray);
-        color: var(--dark);
+        color: var(--text-primary);
       }
 
       /* Content styles */
       .content-card {
-        background-color: white;
+        background-color: var(--card-bg);
         border-radius: 0.75rem;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         padding: 2rem;
@@ -308,12 +233,12 @@
       }
 
       .alert-info {
-        background-color: #eff6ff;
+        background-color: var(--alert-bg);
         border-left: 4px solid var(--primary);
       }
 
       .algorithm-card {
-        background-color: white;
+        background-color: var(--card-bg);
         border-radius: 0.75rem;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         padding: 1.5rem;
@@ -365,7 +290,7 @@
       .flowchart-start,
       .flowchart-end {
         border-radius: 50%;
-        background: #f1f5f9;
+        background: var(--flowchart-bg);
         border: 2px solid var(--primary);
         width: 30px;
         height: 30px;
@@ -389,7 +314,7 @@
       }
 
       .flowchart-box {
-        background: #f1f5f9;
+        background: var(--flowchart-bg);
         border: 1px solid var(--primary);
         border-radius: 5px;
         padding: 8px 12px;
@@ -398,7 +323,7 @@
       }
 
       .flowchart-decision {
-        background: #f1f5f9;
+        background: var(--flowchart-bg);
         border: 1px solid var(--primary);
         width: 120px;
         height: 60px;
@@ -706,11 +631,11 @@
         <div class="question">
           <h3>5. Cosine Series Summation</h3>
           <p>
-            Draw the flowchart to solve the following series which is the summation of cosine series:<br>
-            <strong>s = x - x²/2! + x⁴/4! - x⁶/6! + ... ∞</strong><br>
+            Draw the flowchart to solve the following series which is the
+            summation of cosine series:<br />
+            <strong>s = x - x²/2! + x⁴/4! - x⁶/6! + ... ∞</strong><br />
             neglecting the terms which are less than 10⁻⁴ in magnitude.
           </p>
-          
           <p class="answer">Answer:</p>
           <div class="flowchart">
             <div class="flowchart-start">
@@ -732,7 +657,9 @@
               <div class="flowchart-branch">
                 <span>Yes</span>
                 <div class="flowchart-step">
-                  <div class="flowchart-box">Compute next term using: (-1)ⁿ * x²ⁿ / (2n)!</div>
+                  <div class="flowchart-box">
+                    Compute next term using: (-1)ⁿ * x²ⁿ / (2n)!
+                  </div>
                   <div class="flowchart-arrow"></div>
                 </div>
                 <div class="flowchart-step">
@@ -754,16 +681,19 @@
             </div>
             <div class="flowchart-end"></div>
           </div>
-          <p><strong>Hint:</strong> The method discussed in Example 8 can be used to solve this series with minor changes.</p>
+          <p>
+            <strong>Hint:</strong> The method discussed in Example 8 can be used
+            to solve this series with minor changes.
+          </p>
         </div>
 
         <div class="question">
           <h3>6. Sum of Natural Numbers</h3>
+          <p>Draw the flowchart to find the sum of natural numbers up to N.</p>
           <p>
-            Draw the flowchart to find the sum of natural numbers up to N.
+            <strong>Hint:</strong> The method discussed in Example 10 can be
+            used to solve the series, i.e. s = 1 + 2 + 3 + 4 + ... + N.
           </p>
-          <p><strong>Hint:</strong> The method discussed in Example 10 can be used to solve the series, i.e. s = 1 + 2 + 3 + 4 + ... + N.</p>
-          
           <p class="answer">Answer:</p>
           <div class="flowchart">
             <div class="flowchart-start">
@@ -808,10 +738,9 @@
         <div class="question">
           <h3>7. Factorial Series</h3>
           <p>
-            Draw a flowchart to solve the following series:<br>
+            Draw a flowchart to solve the following series:<br />
             <strong>s = 1 + 1/2! + 1/3! + 1/4! + ... + 1/N!</strong>
           </p>
-          
           <p class="answer">Answer:</p>
           <div class="flowchart">
             <div class="flowchart-start">
@@ -879,11 +808,10 @@
         <div class="question">
           <h3>8. Exponential Series (eˣ)</h3>
           <p>
-            Draw a flowchart to solve the following series:<br>
-            <strong>eˣ = 1 + x + x²/2! + x³/3! + x⁴/4! + ... ∞</strong><br>
+            Draw a flowchart to solve the following series:<br />
+            <strong>eˣ = 1 + x + x²/2! + x³/3! + x⁴/4! + ... ∞</strong><br />
             Neglect the terms which are less than 10 in magnitude.
           </p>
-          
           <p class="answer">Answer:</p>
           <div class="flowchart">
             <div class="flowchart-start">
@@ -891,7 +819,9 @@
               <div class="flowchart-arrow"></div>
             </div>
             <div class="flowchart-step">
-              <div class="flowchart-box">Read x, set term = 1 and sum = 1, i = 1</div>
+              <div class="flowchart-box">
+                Read x, set term = 1 and sum = 1, i = 1
+              </div>
               <div class="flowchart-arrow"></div>
             </div>
             <div class="flowchart-step">
